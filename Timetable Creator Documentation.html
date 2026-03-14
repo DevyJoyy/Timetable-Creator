@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Timetable Creator Documentation</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="timetable-creator-documentation">Timetable Creator Documentation</h1>
+<h3 id="about">About</h3>
+<p>The <em><strong>timetable creator</strong></em> is a software made to convinience students and lecturers in creating a timetable . Looks to make timetable creating easier , descriptively by accepting or combining .xml files of created files via <em>timetable creator</em> to make a whole complete timetable or just by allowing the user to manually create their timetable .</p>
+<h3 id="how-to-use-">How to use ?</h3>
+<p><img src="For%20Documentation\TimeTableOverviewImg.png" alt="Image overview of time timetable creator software"></p>
+<p>This is what the timetable looks like upon initialisation</p>
+<hr>
+<h4 id="manual-timetable-creation"><strong>Manual</strong> Timetable Creation</h4>
+<hr>
+<p>To Start editing , you click on the empty grey spaces (or grey empty div) then add the text you want to have in them . For example &quot;ISTN&quot; as shown in the image below .</p>
+<p><img src="For%20Documentation\TextWriting.png" alt="Image of div text editing"></p>
+<p>In some cases you find that there are two modules in one time slot , fear not because timetable creator has a unique way of showing that . By adding  &quot;<strong>&amp;&amp;</strong>&quot;  the div will change color to indicate timetable clash then you can continue adding the second module text.</p>
+<p>Here is an example :</p>
+<p><img src="For%20Documentation\moduleClash.png" alt="Image of module clash"></p>
+<p>Sometimes you can have a module that occupies <strong>one timeslot</strong> and sometimes there are <strong>double lectures</strong> (meaning more than one slot occupied) and for practicals up to almost <strong>2 hours+ long</strong> , you need more than just one slot , in that case you have the option to join multiple divs into one big div .</p>
+<h5 id="steps-to-joining-divs">Steps to joining divs</h5>
+<p><strong>SELECT</strong> divs you want to <strong>join</strong> by <strong>(crtl + left Click) to select multiple</strong> then after selecting <strong>right click</strong> to call join option .</p>
+<p><img src="For%20Documentation\JoinFunct.png" alt="Image of proccess of joining divs"></p>
+<p>Press join then</p>
+<p><img src="For%20Documentation\joinedDiv.png" alt="Image of resulting joined div "></p>
+<p>The two divs in timeslot 11:25 and 12:20 have been  joined in the above image.</p>
+<hr>
+<h4 id="save-button">Save Button</h4>
+<p>You can save the file as an .xml file , when saved as an .xml file it can later be loaded for editing once more .</p>
+<hr>
+<h4 id="reset-button">Reset Button</h4>
+<p>The reset button , reset the whole timetable to its initial uneditted state .</p>
+<hr>
+<h4 id="print-button">print Button</h4>
+<p>The print button allows the user to export their timetable as a pdf file , which they can either keep as a pdf or print it .</p>
+<p><img src="For%20Documentation\printFunct.png" alt="Image of export suitable preferences"></p>
+<p>For proper print sizing , you adviced to set <em><strong>Pages</strong></em> to <strong>Odd page only</strong> .</p>
+<p><strong>Some websites require more Settings , you may see the message : <em><strong>&quot;Sorry , this feature is not available here&quot;</strong></em>.</strong></p>
+<p><em>To fix that Click on More settings after having pressed print button .</em></p>
+<p><em>Have Paper Size -&gt; A4</em></p>
+<p><em>On Options check -&gt; Background Graphics</em></p>
+<p>and everything should look well , no more error screen for you else if you are using a smaller screen like a phone screen then this feature hasn't been made available for smaller screens .</p>
+<hr>
+<h4 id="loading-xml-files-timetable-creation"><strong>Loading .xml files</strong> Timetable Creation</h4>
+<hr>
+<p>When the <strong>Load</strong> button is pressed , it will open your file explorer and you have to navigate to the saved .xml file to load it .</p>
+<p>And <strong>YES</strong> you can load multiple .xml files , when loading the timetable creator software will combine the files into one complete timetable . This is one of most cherished feature the timetable creator software offers .</p>
+<p>That'll be it , <em><strong>A great day to you and good luck on your studies .</strong></em></p>
+<hr>
+<h4 id="additional-information"><strong>Additional Information</strong></h4>
+<ol>
+<li><strong>Change Color Themes</strong></li>
+</ol>
+<ul>
+<li>You can change the color themes by clicking one either one of the circles on next to <strong>LOAD</strong></li>
+</ul>
+<ol start="2">
+<li><strong>Keys</strong></li>
+</ol>
+<ul>
+<li>Below the timetable are keys that indicate when a div is :
+<ul>
+<li><em><strong>Has clashing modules</strong></em></li>
+<li><em><strong>Has a module</strong></em> ( there is lecture )</li>
+<li><em><strong>Has nothing</strong></em> ( free )</li>
+</ul>
+</li>
+</ul>
+
+            
+            
+        </body>
+        </html>

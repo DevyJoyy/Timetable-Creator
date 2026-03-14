@@ -1,0 +1,502 @@
+/* Variables */
+:root {
+  --background-color: linear-gradient(rgb(35, 28, 47), rgb(23, 18, 31), rgb(15, 12, 20));;
+  --Custom-Background-Color: rgb(17, 163, 88);
+  --text-color: #333;
+  --button-color: #555;
+  --button-text-color: black;
+  --label-text-color: black;
+  --animation-duration: 0.5s;
+  --Timetable-Color: rgb(45, 40, 54);
+  --Timetable-Border-Color: #ccc;
+  --Timetable-Copyrightmark: white;
+}
+
+#labels {
+    background-color: rgb(254, 251, 248);
+    display: flex;
+    flex-shrink: 1;
+    gap: 100px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 30px 0;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 4px;
+    box-shadow: 2px 2px 4px black;
+}
+
+#labels #left-side {
+    width: 70%;
+    background-color: transparent;
+}
+
+#labels #left-side h3 {
+    color: white;
+    font-size: 4rem;
+    text-align: center;
+    background-color: rgb(187, 2, 2);
+    margin: 0;
+    border-radius: 6px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#labels #left-side h6 {
+    text-align: center;
+    font-size: 0.92rem;
+    margin: 0;
+    color: #252424;
+    font-weight: lighter;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#labels #right-side {
+    width: 30%;
+    background-color: transparent;
+}
+
+
+/*================================================================================*/
+
+
+#custom-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.7s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /*
+        Fallback color
+    */
+    background: rgb(35, 31, 32); 
+}
+
+body.custom-theme #custom-background {
+    display: block;
+    opacity: 1;
+}
+
+.design-circle {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    animation: pulse 4s infinite ease-in-out ,color-cycle 10s infinite;
+}
+
+.circle-1 {
+    top: 10%;
+    left: 20%;
+    animation-delay: 1;
+}
+
+.circle-2 {
+    bottom: 10%;
+    right: 10%;
+    animation-delay: 2s;
+}
+
+.circle-3 {
+    bottom: 2%;
+    right: 80%;
+    animation-delay: 0.5s;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes color-cycle {
+    0% { background-color: rgba(0, 174, 239, 0.7); }
+    33% { background-color: rgba(0, 166, 81, 0.6); } 
+    66% { background-color: rgba(255, 222, 0, 0.8); }
+    100% { background-color: rgba(237, 28, 36, 1); }
+}
+
+/* Dark Theme */
+body.dark-theme {
+  --background-color: linear-gradient(rgb(35, 28, 47), rgb(23, 18, 31), rgb(15, 12, 20));
+  --text-color: black; 
+}
+
+body.dark-theme {
+  background-image: var(--background-color);
+  color: var(--text-color);
+  --label-text-color: white;
+  --Timetable-Color: rgb(45, 40, 54);
+  --Timetable-Border-Color: #ccc;
+}
+
+/* Light Theme */
+body.light-theme {
+    --Timetable-Copyrightmark: black;
+  --background-image: #f0f0f0;
+  --text-color: #333;
+  --label-text-color: black;
+  --Timetable-Color: rgb(45, 40, 54);
+  --Timetable-Border-Color: grey;
+}
+
+
+/* Custom Theme */
+body.custom-theme {
+  --Timetable-Copyrightmark: white;
+  --background-image: rgba(35, 31, 32, 0.9);
+  --text-color: #000;
+  --label-text-color: white;
+  --Timetable-Color: rgb(0, 116, 159);
+  --Timetable-Border-Color: Black;
+  background-size: contain; 
+  background-position: center; 
+  background-repeat: no-repeat;
+}
+
+body,
+body * {
+  transition: background-color var(--animation-duration) ease,
+    color var(--animation-duration) ease,
+    border-color var(--animation-duration) ease;
+}
+
+body {
+  background: var(--background-image);
+  color: var(--text-color);
+}
+
+.theme-color button {
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+}
+
+.theme-color button {
+  padding: 10px 15px;
+  margin: 5px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Base styles for all buttons */
+.theme-color button {
+    border: 2px solid transparent; 
+}
+
+.theme-color button.active {
+    border-color: rgb(145, 183, 253); 
+}
+
+.theme-color button[data-theme="light"] {
+    background-color: #fff;
+    color: #333;
+}
+
+.theme-color button[data-theme="dark"] {
+    background-color: #333;
+    color: #fff;
+}
+
+.theme-color button[data-theme="custom"] {
+    background: var(--Custom-Background-Color);
+    color: #000;
+}
+
+#help {
+    font-weight: bolder;
+}
+
+/*================================================================================*/
+
+body {
+    min-height: 100vh;
+}
+
+.timetable {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 100px repeat(10, 1fr);
+    grid-template-rows: auto repeat(5, 80px);
+    gap: 4px;
+    border: 1px solid var(--Timetable-Border-Color);
+    border-radius: 2px;
+    margin: 20px 40px;
+    padding: 20px;
+    background-color: var(--Timetable-Color);
+}
+
+[data-col] {
+    grid-column: attr(data-col number);
+}
+
+[data-row] {
+    grid-row: attr(data-row number);
+}
+
+.empty-cell {
+    grid-column: 1;
+    grid-row: 1;
+    background-color: #f2f2f2;
+}
+
+.time-slot {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px 5px;
+    background-color: #f2f2f2;
+}
+
+.day-header {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #f2f2f2;
+    align-content: center;
+}
+
+.schedule-entry {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #8e8c8c;
+    border: 1px solid #525252;
+    color: white;
+    font-weight: bold;
+    font-size: 0.6rem;
+    font-family: sans-serif;
+    cursor: pointer;
+    text-align: center !important;
+    direction: ltr !important; 
+    
+    /* 
+       Makes sure text writes from left to right
+       Important for input eventLister for table 
+    */
+    text-align: left !important; 
+}
+
+.schedule-entry.has-content {
+    text-align: center !important;
+    background-color: rgb(72, 68, 77); 
+    border: 1px solid rgb(24, 20, 31);
+}
+
+.schedule-entry.selected {
+    border: 4px solid #8bafd6;
+    box-shadow: 4px 4px 10px rgba(190, 221, 254, 0.5);
+}
+
+.context-menu {
+    position: absolute;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.context-menu-item {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.context-menu-item:hover {
+    background-color: #555555;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+}
+
+.btns {
+    display: flexbox;
+    flex-grow: 1;
+    flex-basis: 0;
+    width: fit-content;
+    margin: 2px auto;
+    justify-content: space-evenly;
+    align-content: center;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgb(23, 18, 31);
+    box-shadow: 4px 4px 6px black;
+}
+
+#saveButton, #printBtn, #resetBtn , #loadButton {
+    width: 200px;
+    height: 28px;
+    padding: 0;
+    border-radius: 6px;
+    border: none;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn, button:hover {
+    background-color: rgb(35, 28, 47);
+    color: white;
+}
+
+.btn, button:active {
+    background-color: rgb(23, 18, 31);
+    color: rgb(116, 126, 179);
+}
+
+.schedule-entry.clash {
+    background-image: linear-gradient(to right, rgb(237, 28, 36), #bb2005);
+    color: white; 
+}
+
+.keys {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 12px;
+}
+
+.keys label div {
+    height: 40px;
+    width: 40px;
+    margin: 0 20px;
+    border-radius: 4px;
+}
+
+.keys label #clash-div-key {
+    background: linear-gradient(to right, rgb(237, 28, 36), #bb2005);
+}
+
+.keys label #hasContent-div-key {
+    background-color: rgb(45, 40, 54);
+    border: 1px solid rgb(24, 20, 31);
+}
+
+.keys label #empty-div-key {
+    background-color: rgb(129, 128, 128);
+}
+
+.keys label {
+    display: flex;
+    color: var(--label-text-color);
+    font-weight: lighter;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(72, 68, 77);
+    width: fit-content;
+    padding: 10px;
+    margin: 0 auto;
+    gap: 30px;
+    border-radius: 25px;
+    box-shadow: 2px 2px 10px black;
+}
+
+
+.color-scheme, #back-btn, #help {
+    border-radius: 20px;
+    width: 42px;
+    height: 42px;
+    border: 2px solid #252424;
+    cursor: pointer;
+}
+
+#back-btn {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: fit-content;
+    height: fit-content;
+    font-size: 2rem;
+}
+
+footer {
+    color: white;
+    font-family: monospace;
+    font-size: .8rem;
+}
+
+#mobile-unavailable-message {
+    display: none;
+}
+
+
+/*================================================================================*/
+/* PRINT OUT */
+/*================================================================================*/
+
+
+@media print {
+
+    .no-print {
+        display: none !important;
+    }
+
+    /* Margin is set to better be suitable for print out */
+    @page {
+        margin: 0.14cm;
+    }
+
+    
+    .timetable {
+        border: 1px solid black; 
+        box-shadow: none;
+    }
+
+    footer {
+    font-size: .6rem;
+}
+}
+
+
+
+/*================================================================================*/
+/* PHONE COMPATABILITY (Not yet available)*/
+/*================================================================================*/
+
+
+@media (max-width: 1024px) {
+
+    .timetable, .keys, .btns, #labels, .top-bar #inbetween, .top-bar .theme-color, #help {
+        display: none !important;
+    }
+
+    #mobile-unavailable-message {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100vw;
+        height: 100vh;
+        padding: 20px;
+        box-sizing: border-box;
+        font-family: monospace;
+    }
+
+    #mobile-unavailable-message h1 {
+        font-size: 1.4em;
+        color: #CC0000;
+        margin-bottom: 15px;
+    }
+        
+    #mobile-unavailable-message p {
+        max-width: 400px;
+        line-height: 1.5;
+        color: #555;
+    }
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tbStyles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=chevron_backward" />    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeTable Test</title>
+</head>
+<body>
+    <div id="labels">
+        <div id="left-side">
+            <H3>
+                Timetable
+            </H3>
+            <H6>
+                Brought to you by Joyy
+            </H6>
+        </div>
+        <div id="right-side">
+            <img id="org-logo" src="Logo/JoyyLogoB.png" width="280px" height="100px" alt="Image of Organization Logo">
+        </div>
+    </div>
+
+    <div id="custom-background">
+        <div class="design-circle circle-1"></div>
+        <div class="design-circle circle-2"></div>
+        <div class="design-circle circle-3"></div>
+    </div>
+
+    <div class="top-bar no-print">
+        <button id="back-btn"><span class="material-symbols-outlined">chevron_backward</span></button>
+        <div id="inbetween">
+            <label for="loadFileInput">
+                <button type="button" id="loadButton">load</button>
+            </label>
+            <input type="file" id="loadFileInput" accept=".xml" multiple style="display: none;">
+        </div>
+        <div class="theme-color">
+            <button data-theme="dark" class="color-scheme" id="dark-mode"></button>
+            <button data-theme="light" class="color-scheme" id="light-mode"></button>
+            <button data-theme="custom" class="color-scheme" id="custom-mode"></button>
+        </div>
+        <button id="help" title="How to use ?">?</button>
+    </div>
+
+    <div class="timetable" id="default-timetable">
+        <div class="empty-cell"></div>
+        
+        <div class="time-slot" data-col="2">07:45</div>
+        <div class="time-slot" data-col="3">08:40</div>
+        <div class="time-slot" data-col="4">09:35</div>
+        <div class="time-slot" data-col="5">10:30</div>
+        <div class="time-slot" data-col="6">11:25</div>
+        <div class="time-slot" data-col="7">12:20</div>
+        <div class="time-slot" data-col="8">13:15</div>
+        <div class="time-slot" data-col="9">14:10</div>
+        <div class="time-slot" data-col="10">15:05</div>
+        <div class="time-slot" data-col="11">16:00</div>
+
+        <div class="day-header" data-row="2">Monday</div>
+        <div class="schedule-entry" data-row="2" data-col="2" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="2" data-col="3" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="2" data-col="4" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="2" data-col="5" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="2" data-col="6" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="2" data-col="7" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="2" data-col="8" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="2" data-col="9" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="2" data-col="10" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="2" data-col="11" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+
+        <div class="day-header" data-row="3">Tuesday</div>
+        <div class="schedule-entry" data-row="3" data-col="2" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="3" data-col="3" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="3" data-col="4" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="3" data-col="5" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="3" data-col="6" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="3" data-col="7" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="3" data-col="8" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="3" data-col="9" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="3" data-col="10" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="3" data-col="11" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        
+        <div class="day-header" data-row="4">Wednesday</div>
+        <div class="schedule-entry" data-row="4" data-col="2" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="4" data-col="3" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="4" data-col="4" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="4" data-col="5" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="4" data-col="6" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="4" data-col="7" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="4" data-col="8" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="4" data-col="9" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="4" data-col="10" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="4" data-col="11" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+
+        <div class="day-header" data-row="5">Thursday</div>
+        <div class="schedule-entry" data-row="5" data-col="2" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="5" data-col="3" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="5" data-col="4" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="5" data-col="5" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="5" data-col="6" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="5" data-col="7" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="5" data-col="8" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="5" data-col="9" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="5" data-col="10" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="5" data-col="11" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        
+        <div class="day-header" data-row="6">Friday</div>
+        <div class="schedule-entry" data-row="6" data-col="2" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="6" data-col="3" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="6" data-col="4" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="6" data-col="5" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="6" data-col="6" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="6" data-col="7" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="6" data-col="8" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="6" data-col="9" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="6" data-col="10" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        <div class="schedule-entry" data-row="6" data-col="11" contenteditable="true" spellcheck="false" data-maxlength="30"></div>
+        
+        <div id="context-menu" class="context-menu" style="display: none;">
+            <div class="context-menu-item" id="join-opt">Join</div>
+        </div>
+    </div>
+
+    <div class="keys">
+        <label for="clash-div-key"><div id="clash-div-key"></div> Clashing Modules</label>
+        <label for="hasContent-div-key"><div id="hasContent-div-key"></div> Module</label>
+        <label for="empty-div-key"><div id="empty-div-key"></div> Free Time</label>
+    </div>
+
+    <div class="btns no-print">
+        <button id="resetBtn">reset</button>
+        <button id="saveButton">save</button>
+        <button id="printBtn">print</button>
+    </div>
+
+    <div id="mobile-unavailable-message">
+        <h1>Sorry , this feature is not available here</h1>
+        <p>The feature relies on mouse and keyboard function</p>
+        <p>Please try a laptop or desktop computer (wider screen) to access the timetable feature</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Joyy(N_N_M). Licensed under the Apache License, Version 2.0.</p>
+    </footer>
+
+    <script src="timetableFunc.js"></script>
+</body>
+</html>
