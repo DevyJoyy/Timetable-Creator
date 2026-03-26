@@ -422,6 +422,7 @@ body {
     width: fit-content;
     height: fit-content;
     font-size: 2rem;
+    display: none;
 }
 
 footer {
