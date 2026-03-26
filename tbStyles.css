@@ -418,11 +418,11 @@ body {
 }
 
 #back-btn {
+    display: none;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     width: fit-content;
     height: fit-content;
     font-size: 2rem;
-    display: none;
 }
 
 footer {
