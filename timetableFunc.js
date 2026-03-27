@@ -182,7 +182,12 @@ function saveToXML() {
         // Use innerText to get the raw content, preserving '&&'
         const content = entry.innerText.trim();
         const span = entry.style.gridColumnEnd.split(' ')[1] || '1';
-        const encodedContent = content.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+        const encodedContent = content
+            .replace(/&/g, '&amp;') 
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+        // const encodedContent = content.replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
         xmlStr += `  <entry row="${row}" col="${col}" span="${span}">\n`;
         xmlStr += `    <content>${encodedContent}</content>\n`;
